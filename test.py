@@ -25,13 +25,11 @@ sample = wf.getframerate()
 wf.close()
 tmp = sample
 new_sample = 0
+#Если частота не подходит для передачи в следующий модуль, то она изменяется на ближаюшую
 if sample not in sample_list:
 	for i in sample_list:
 		if abs(sample-i) < tmp:
 			new_sample = i
 			tmp = abs(sample-i)
-	#добавить поиск размера
+			
 	reset_sample(path,new_sample)
-	#wf = wave.open(path, "rb")
-	#sample = wf.getframerate()
-	#print(sample)
