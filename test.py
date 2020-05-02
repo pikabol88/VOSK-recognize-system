@@ -19,10 +19,19 @@ out = out.replace('wav','txt')
 out = "text/" + out
 
 save_in_file(result,out)
-
+sample_list = [8000, 16000, 32000, 48000]
 wf = wave.open(path, "rb")
 sample = wf.getframerate()
-
-if sample!=8000 and sample!=16000 and sample!=32000 and sample!=48000:
+wf.close()
+tmp = sample
+new_sample = 0
+if sample not in sample_list:
+	for i in sample_list:
+		if abs(sample-i) < tmp:
+			new_sample = i
+			tmp = abs(sample-i)
 	#добавить поиск размера
-	reset_sample(path,48000)
+	reset_sample(path,new_sample)
+	#wf = wave.open(path, "rb")
+	#sample = wf.getframerate()
+	#print(sample)
