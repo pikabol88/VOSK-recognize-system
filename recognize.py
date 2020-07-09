@@ -54,5 +54,6 @@ def recognize(str_wav:str):
 	#перевожу обратно в JSON формат
 	final = json.dumps(result,ensure_ascii=False)
 	
+	wf.close()
 	return final
 	

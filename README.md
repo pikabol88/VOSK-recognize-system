@@ -18,11 +18,15 @@
 
 Выполните следующие команды:
 
-    git clone https://github.com/kaldi-asr/kaldi
-
-    cd VOSK/example
-    wget http://alphacephei.com/kaldi/models/vosk-model-ru-0.10.zip
-    unzip vosk-model-ru-0.10.zip
-    mv vosk-model-ru-0.10.zip model
-    python3 test.py mp3/test.mp3 
+	-> Склонировать всю ветку
+	-> Загрузить с сайта https://alphacephei.com/vosk/models.html большую модель русского языка (vosk-model-ru-0.10.zip) и разархивировать с названием 'model'
+	-> Добавить в папку mp3 запись
+	-> В консольном окне, открытом из папки с содержимым ветки:
+		python3 main.py mp3/name.mp3
+	(вместо name название файла из папки mp3)
+	
+Результат:
+В папке done появится результат
+В папке wav соответсвующая запись в wav формате
+В папке test промежуточные результаты диаризации и распознования, которые после обработки записи самостоятельно удалятся
 

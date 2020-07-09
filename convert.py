@@ -38,6 +38,7 @@ def conv_mp3_to_wav(mp3:str):
 	   sound_new.export(str_wav, format="wav")  
 	   wf = wave.open(str_wav, "rb")
 	   
+	wf.close()
 	return str_wav
 
 """
